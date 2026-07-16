@@ -1,10 +1,23 @@
 from textwrap import dedent
 from dotenv import load_dotenv
+
+# Load local .env (works on your computer)
+load_dotenv()
+
+# If running on Streamlit Cloud, use Streamlit Secrets
+try:
+    import streamlit as st
+
+    if "GOOGLE_API_KEY" in st.secrets:
+        os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+except Exception:
+    pass
+
 from agno.agent import Agent
 from agno.models.google import Gemini
 from agno.tools.youtube import YouTubeTools
 
-load_dotenv()
+
 
 def build_youtube_agent():
     return Agent(
