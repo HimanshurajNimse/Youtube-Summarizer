@@ -21,9 +21,13 @@ button = st.button("Analyze Video") # True/False
 
 if video_url and button:
     with st.spinner("Analyzing video...."):
-        response = agent.run(
-            f"Analyze this video: {video_url}"
-        )
+        try:
+            response = agent.run(f"Analyze this video: {video_url}"
+                                )
+            st.markdown("Analysis Report of Video:")
+            st.markdown(response.content)
+        except Exception as e:
+            st.error(f"❌ {e}")
 
-    st.markdown("Analysis Report of Video:")
-    st.markdown(response.content)
+    
+    
