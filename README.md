@@ -133,4 +133,4 @@ It helps others discover the project and motivates me to build more AI tools.
 
 GitHub: https://github.com/HimanshurajNimse
 
-LinkedIn: *(Add your LinkedIn profile here)*
+LinkedIn: https://www.linkedin.com/in/himanshurajnimse/
